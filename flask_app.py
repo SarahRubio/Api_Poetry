@@ -1,16 +1,19 @@
-from flask import Flask, redirect, request, url_for
+from flask import Flask, redirect, request, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS
+import random
 
 app = Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = True
 
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="##",
-    password="##",
-    hostname="apiPoetry.mysql.pythonanywhere-services.com",
-    databasename="##",
+    username="#",
+    password="#",
+    hostname="#",
+    databasename="#",
 )
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
@@ -32,17 +35,24 @@ class PoetrySchema(ma.SQLAlchemyAutoSchema):
         model = Poetry
         load_instance = True
 
-
-@app.route('/', methods=["GET","POST"])
+@app.route('/')
 def index():
+    number = random.randint(1,4)
+    aPoetry = Poetry.query.filter_by(id=number).first()
+    poetry_schema = PoetrySchema(many=False)
+    output = poetry_schema.dump(aPoetry)
+    return render_template("main_page.html", poetry = output)
+
+@app.route('/aVerse/', methods=["GET","POST"])
+def poetry():
     if request.method == "GET":
-        allPoetries = Poetry.query.all()
-        poetry_schema = PoetrySchema(many=True)
-        output = poetry_schema.dump(allPoetries)
-        return {'poetries' : output}
+        number = random.randint(1,4)
+        aPoetry = Poetry.query.filter_by(id=number).first()
+        poetry_schema = PoetrySchema(many=False)
+        output = poetry_schema.dump(aPoetry)
+        return {'poetry' : output}
 
     poetries = Poetry(verse=request.form["contents"], author=request.form["authorName"])
     db.session.add(poetries)
     db.session.commit()
     return redirect(url_for('index'))
-
