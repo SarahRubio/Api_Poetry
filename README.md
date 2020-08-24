@@ -12,7 +12,9 @@ A REST API for poetry
 ### Get a random verse
 
 Using the language / framework of your choice:
+
 Load http://apipoetry.pythonanywhere.com/aVerse
+
 The JSON response looks like that :
    ` {
         poetry: {
@@ -21,7 +23,9 @@ The JSON response looks like that :
             verse: "Moi, je commence à faire des poèmes quand la partie est perdue. On n'a jamais vu qu'un poème ait changé les choses."
          }
     } `
+    
 For example with javascript you can get a random verse like that : 
+
     `fetch('http://apipoetry.pythonanywhere.com/aVerse/')
     .then(function(body) { 
       return body.json(); 
@@ -31,7 +35,9 @@ For example with javascript you can get a random verse like that :
       span.innerHTML = json.poetry.verse + " - " + json.poetry.author;
       console.log(json.poetry.id);
     });`
+    
 Enjoy the poetry ❤️
+
 Bonus: Add a button to repeat the request for a new poetry!
 
 
