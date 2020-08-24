@@ -25,7 +25,7 @@ The JSON response looks like that :
          }
     }
     
-For example with javascript you can get a random verse like that : 
+For example with javascript you can get a random verse like this : 
 
     fetch('http://apipoetry.pythonanywhere.com/aVerse/')
     .then(function(body) { 
