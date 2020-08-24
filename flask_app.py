@@ -10,10 +10,10 @@ app.config["DEBUG"] = True
 
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="#",
-    password="#",
-    hostname="#",
-    databasename="#",
+    username="apiPoetry",
+    password="NZH5uwCdePNZH5uwCdeP",
+    hostname="apiPoetry.mysql.pythonanywhere-services.com",
+    databasename="apiPoetry$poetrydb",
 )
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 299

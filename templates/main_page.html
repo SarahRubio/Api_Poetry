@@ -3,47 +3,47 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-        <title>Api Poetry!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        <title>Api Poetry!</title>
     </head>
 
     <body>
 
-        <div class="jumbotron text-center">
-                <h2>Api Poetry, <small>an API to bring poetry to the world! 🖋</small></h2>
-        </div>
-            <div class="container">
+<div class="jumbotron text-center">
+          <h2>Api Poetry, <small>an API to bring poetry to the world! 🖋</small></h2>
+</div>
+        <div class="container">
 
-                <h3>Quickstart - Get a random verse of poetry</h3>
+            <h3>Quickstart - Get a random verse of poetry</h3>
 
-                <ul>
-                    <li>Using the language / framework of your choice:</li>
-                    <li>Load http://apipoetry.pythonanywhere.com/aVerse</li>
-                    <li>The JSON response looks like that : </li>
-                    <pre>
-                        {
-                            poetry: {
-                                author: "Cesare Pavese",
-                                id: 1,
-                                verse: "Moi, je commence à faire des poèmes quand la partie est perdue. On n'a jamais vu qu'un poème ait changé les choses."
-                            }
-                        }
-                    </pre>
-                    <li>Enjoy the poetry ❤️ </li>
-                    <li>Bonus: Add a button to repeat the request for a new poetry! </li>
-                </ul>
+            <ul>
+                <li>Using the language / framework of your choice:</li>
+                <li>Load http://apipoetry.pythonanywhere.com/aVerse</li>
+                <li>The JSON response looks like that : </li>
+                <pre>
+                    {
+                        poetry: {
+                            author: "Cesare Pavese",
+                            id: 1,
+                            verse: "Moi, je commence à faire des poèmes quand la partie est perdue. On n'a jamais vu qu'un poème ait changé les choses."
+                         }
+                    }
+                </pre>
+                <li>Enjoy the poetry ❤️ </li>
+                <li>Bonus: Add a button to repeat the request for a new poetry! </li>
+            </ul>
 
-                <h3>A poetry just for you :</h3>
+            <h3>A poetry just for you :</h3>
 
                     <blockquote>
                         <p><em>{{ poetry.verse }}</em></p>
                         <footer><mark>{{ poetry.author }}</mark></footer>
                     </blockquote>
 
-            </div>
+        </div><!-- /.container -->
 
-            <div class="container">
-                <p class="text-center">Made with ♥︎ by Sarah Rubio</p>
-            </div>
+        <div class="container">
+            <p class="text-center">Made with ♥︎ by Sarah Rubio</p>
+        </div>
+
     </body>
 </html>
