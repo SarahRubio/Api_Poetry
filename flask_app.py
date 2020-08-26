@@ -10,10 +10,10 @@ app.config["DEBUG"] = True
 
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="apiPoetry",
-    password="NZH5uwCdePNZH5uwCdeP",
-    hostname="apiPoetry.mysql.pythonanywhere-services.com",
-    databasename="apiPoetry$poetrydb",
+    username="yourusername",
+    password="yourpassword",
+    hostname="thehostname",
+    databasename="yourdbname",
 )
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
@@ -43,7 +43,7 @@ def index():
     output = poetry_schema.dump(aPoetry)
     return render_template("main_page.html", poetry = output)
 
-@app.route('/aVerse/', methods=["GET","POST"])
+@app.route('/verse/', methods=["GET","POST"])
 def poetry():
     if request.method == "GET":
         number = random.randint(1,4)
